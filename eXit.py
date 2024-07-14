@@ -67,67 +67,76 @@ ascii = '''
 '''
 print(ascii)
 
+import os
+import sys
+
 def congrats():
-    print("Congratulations, you're heading to a new world!." + "\n" + "Do you want to play again?") 
-    if input(">") == "yes":
+    print("Congratulations, you're heading to a new world!.\nDo you want to play again?") 
+    if input("> ").lower() == "yes":
         os.execl(sys.executable, os.path.abspath(__file__), *sys.argv)
     else:
         quit()
-    return
 
 def startagain():
     input('Press the enter button to continue...')
-    return
-startagain()
 
 def trapped():
-    print("You're trapped in a dungeon with your friend." + "\n" + "You see a barrel. What do you do?")
-    return
-trapped()
+    print("You're trapped in a dungeon with your friend.\nYou see a barrel. What do you do?")
 
 def dungeon():
-    if input(">") == "move barrel":
-        print ("The barrel rolls aside and you find a secret tunnel." + "\n" + "What do you do?")
-    else:
-        print ("You can't do that here.")
-    return
-dungeon()
+    while True:
+        if input("> ").lower() == "move barrel":
+            print("The barrel rolls aside and you find a secret tunnel.\nWhat do you do?")
+            break  # Break the loop if condition is met
+        else:
+            print("You can't do that here.")
 
 def bye():
-    if input(">") == "enter tunnel":
-        print ("You start to escape but your friend is too weak to go with you. They hand you a note." + "\n" + "What do you do?")
-    else:
-        print ("You can't type that.")
-    return
-bye()
+    while True:
+        if input("> ").lower() == "enter tunnel":
+            print("You start to escape but your friend is too weak to go with you. They hand you a note.\nWhat do you do?")
+            break
+        else:
+            print("You can't type that.")
 
 def note():
-    if input(">") == "read note":
-        print ("It is too dark to read the note." + "\n" + "What do you do?")
-    else:
-        print ("You can't do that here.")
-    return
-note()
+    while True:
+        if input("> ").lower() == "read note":
+            print("It is too dark to read the note.\nWhat do you do?")
+            break
+        else:
+            print("You can't do that here.")
 
 def leave():
-    if input(">") == "leave":
-        print ("You crawl through the tunnel and the tunnel leads to a beach." + "\n" + "What do you do?")
-    else:
-        print ("You can't do that here.")
-    return
-leave()
+    while True:
+        if input("> ").lower() == "leave":
+            print("You crawl through the tunnel and the tunnel leads to a beach.\nWhat do you do?")
+            break
+        else:
+            print("You can't do that here.")
 
 def look():
-    if input(">") == "look":
-        print ("In the water you see a boat." + "\n" + "What do you do?")
-    else:
-        print ("You can't do that here.")
-    return
-look()
+    while True:
+        if input("> ").lower() == "look":
+            print("In the water you see a boat.\nWhat do you do?")
+            break
+        else:
+            print("You can't do that here.")
 
 def get():
-    if input(">") == "get on boat":
-        congrats()
-    return
-get()
+    while True:
+        if input("> ").lower() == "get on boat":
+            congrats()
+            break
+        else:
+            print("You can't do that here.")
 
+# Initial function calls to start the story
+startagain()
+trapped()
+dungeon()
+bye()
+note()
+leave()
+look()
+get()
