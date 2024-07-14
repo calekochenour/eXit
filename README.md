@@ -2,11 +2,12 @@
 
 [![alt tag](http://nikolaskama.me/content/images/2016/07/mr-robot-1.gif)](https://wikipedia.org/wiki/Mr._Robot)
 
-# PRESS ANY KEY TO START.
+# eXit is the ascii styled BBS game on the tv series Mr Robot
 
-eXit is the game found on the Mr Robot tv series. It can be played here: https://www.whoismrrobot.com/exit/
+Users were able to play it here: https://www.whoismrrobot.com/exit/
+but soon the page was taken down by USA Network
 
-I have ported the game over to Python as part of a project I created to understand and learn Python.
+This Repo is a fork of sinfulz original repo https://github.com/sinfulz/eXit
 
 # Requirements
 * os
@@ -19,9 +20,8 @@ python3 eXit.py
 ```
 
 # Changelog
-* Version 0.1, 19/04/2020 - Release day! 
+* Version 0.1, 19/04/2020 - Release day!
+* Version 1, 15/7/2024 - Replaced for with while loops
 
 # Disclaimer:
-This is my first Python program created, it may not have been written using the best Python coding skills but it has been done 100% by me. Feel free to suggest changes/improves/feedback via the Issues section. Please treat this as a work in progress as I will continously improve it to make the program as efficient & bug free as possible. Thank you.
-
 This piece of software has no affiliation with the Mr Robot brand or the USA Network.
