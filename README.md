@@ -7,7 +7,7 @@
 Users were able to play it here: https://www.whoismrrobot.com/exit/
 but soon the page was taken down by USA Network
 
-This Repo is a fork of sinfulz original repo https://github.com/sinfulz/eXit
+This repo is a fork of DasAutoIngenieur's repo (https://github.com/DasAutoIngenieur/eXit), which itself is a fork of sinfulz's original repo (https://github.com/sinfulz/eXit).
 
 # Requirements
 * os
