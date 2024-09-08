@@ -112,7 +112,7 @@ def congratulations():
     )
     # TODO: Fix this. Avoid calling main() within subfunction.
     if input("> ").strip().lower() == "yes":
-        main()
+        eXit()
     else:
         quit()
 
@@ -165,8 +165,8 @@ def stay():
 
 
 def path_leave():
-    start()
-    barrel()
+    # start()
+    # barrel()
     tunnel()
     note()
     too_dark()
@@ -175,17 +175,46 @@ def path_leave():
 
 
 def path_stay():
-    start()
-    barrel_2()
+    # start()
+    # barrel_2()
     note_2()
     match()
     stay()
 
 
-def main():
-    path_leave()
-    # path_stay()
+def barrel_main():
+    print(BARREL_2)
+    print(
+        "\nYou're trapped in a dungeon with your friend."
+        "\nYou see a barrel. What do you do?\n"
+    )
+    while True:
+        response = input("> ").strip().lower()
+        if response == "move the barrel":
+            # Follow path to leave
+            path_leave()
+            # break
+        elif response == "sit down next to my friend":
+            # Follow path to stay
+            path_stay()
+        else:
+            print("You can't do that here.\n")
+
+
+# def eXit():
+#     path_leave()
+# path_stay()
+
+
+def eXit():
+    # Same starting point
+    start()
+    # Decision point at barrel
+    barrel_main()
+    # Leave arc
+    # Play again choice
+    # Stay arc
 
 
 if __name__ == '__main__':
-    main()
+    eXit()
