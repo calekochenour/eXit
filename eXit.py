@@ -1,5 +1,5 @@
 """
- **Answers to each input:*** (to follow episode 4x11)
+ Answers to each input (to follow episode 4x11) sequence:
 
  Path 1 - leave to a new world:
    > Move the barrel
@@ -24,10 +24,15 @@ path.append(str(codebase_root))
 from utilities.ascii import *
 
 
+def get_response():
+    return input("> ").strip().lower()
+
+
 def start():
-    print(START_1)
+    # print(START_2)
     print(START_3)
-    input('Press the "Enter" button to start...')
+    print(START_1)
+    input("Press the Enter button to start...")
 
 
 def barrel():
@@ -37,8 +42,11 @@ def barrel():
         "\nYou see a barrel. What do you do?\n"
     )
     while True:
-        if input("> ").strip().lower() == "move the barrel":
-            break
+        response = get_response()
+        if response == "move the barrel":
+            return 0
+        elif response == "sit down next to my friend":
+            return 1
         else:
             print("You can't do that here.\n")
 
@@ -50,13 +58,14 @@ def tunnel():
         "\nWhat do you do?\n"
     )
     while True:
-        if input("> ").strip().lower() == "enter tunnel":
+        # if response() == "enter tunnel":
+        if get_response() == "enter tunnel":
             break
         else:
             print("You can't do that here.\n")
 
 
-def note():
+def note_leave():
     print(FRIEND_2)
     print(
         "\nYou start to escape but your friend is too weak to"
@@ -64,7 +73,7 @@ def note():
         "\nWhat do you do?\n"
     )
     while True:
-        if input("> ").strip().lower() == "read note":
+        if get_response() == "read note":
             break
         else:
             print("You can't do that here.\n")
@@ -74,7 +83,7 @@ def too_dark():
     print(NOTE_1)
     print("\nIt is too dark to read the note. " "\nWhat do you do?\n")
     while True:
-        if input("> ").strip().lower() == "leave":
+        if get_response() == "leave":
             break
         else:
             print("You can't do that here.\n")
@@ -87,7 +96,7 @@ def leave():
         "\nyou to a beach. What do you do?\n"
     )
     while True:
-        if input("> ").strip().lower() == "look":
+        if get_response() == "look":
             break
         else:
             print("You can't do that here.\n")
@@ -97,8 +106,7 @@ def look():
     print(BOAT_3)
     print("\nIn the water you see a boat." "\nWhat do you do?\n")
     while True:
-        if input("> ").strip().lower() == "get on the boat":
-            congratulations()
+        if get_response() == "get on the boat":
             break
         else:
             print("You can't do that here.\n")
@@ -111,33 +119,17 @@ def congratulations():
         "\nDo you want to play again?\n"
     )
     # TODO: Fix this. Avoid calling main() within subfunction.
-    if input("> ").strip().lower() == "yes":
+    if get_response() == "yes":
         eXit()
     else:
         quit()
 
 
-def barrel_2():
-    print(BARREL_2)
-    # print(YOUR_FRIEND_2)
-    print(YOUR_FRIEND_3)
-    print(YOUR_FRIEND_5)
-    print(
-        "\nYou're trapped in a dungeon with your friend."
-        "\nYou see a barrel. What do you do?\n"
-    )
-    while True:
-        if input("> ").strip().lower() == "sit down next to my friend":
-            break
-        else:
-            print("You can't do that here.\n")
-
-
-def note_2():
+def note_stay():
     print(NOTE_1)
     print("\nYour friend hands you a note." "\nWhat do you do?\n")
     while True:
-        if input("> ").strip().lower() == "light a match":
+        if get_response() == "light a match":
             break
         else:
             print("You can't do that here.\n")
@@ -150,7 +142,7 @@ def match():
         "\nDo you leave your friend or stay?\n"
     )
     while True:
-        if input("> ").strip().lower() == "stay":
+        if get_response() == "stay":
             break
         else:
             print("You can't do that here.\n")
@@ -166,42 +158,28 @@ def stay():
 
 def path_leave():
     tunnel()
-    note()
+    note_leave()
     too_dark()
     leave()
     look()
+    congratulations()
 
 
 def path_stay():
-    note_2()
+    note_stay()
     match()
     stay()
 
 
-def barrel_main():
-    print(BARREL_2)
-    print(
-        "\nYou're trapped in a dungeon with your friend."
-        "\nYou see a barrel. What do you do?\n"
-    )
-    while True:
-        response = input("> ").strip().lower()
-        if response == "move the barrel":
-            # Follow path to leave
-            path_leave()
-            # break
-        elif response == "sit down next to my friend":
-            # Follow path to stay
-            path_stay()
-        else:
-            print("You can't do that here.\n")
-
-
 def eXit():
-    # Same starting point
     start()
-    # Decision point at barrel
-    barrel_main()
+    is_real_exit = barrel()
+    if is_real_exit:
+        # Follow path to stay
+        path_stay()
+    else:
+        # Follow path to leave
+        path_leave()
 
 
 if __name__ == '__main__':
