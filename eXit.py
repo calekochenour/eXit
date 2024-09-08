@@ -185,5 +185,5 @@ def path_stay():
 
 
 if __name__ == '__main__':
-    # main_1()
+    path_leave()
     path_stay()
