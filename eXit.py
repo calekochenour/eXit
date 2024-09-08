@@ -35,6 +35,7 @@ def congratulations():
 
 def start():
     print(ascii_images.start)
+    print(ascii_images.exit)
     input('Press the "Enter" button to start...')
 
 
@@ -113,18 +114,46 @@ def look():
             print("You can't do that here.\n")
 
 
-def stay():
+def barrel_2():
+    print(
+        "\nYou're trapped in a dungeon with your friend."
+        "\nYou see a barrel. What do you do?\n"
+    )
     while True:
-        if input("\n> ").lower() == "Sit down next to my friend":
-            print(
-                "\nThe barrel rolls aside and you find a secret tunnel."
-                "\nWhat do you do?"
-            )
+        if input("> ").lower() == "sit down next to my friend":
             break
-            # Move to iteration two - stay
+        else:
+            print("You can't do that here.\n")
 
 
-def main():
+def note_2():
+    print("\nYour friend hands you a note." "\nWhat do you do?\n")
+    while True:
+        if input("> ").lower() == "light a match":
+            break
+        else:
+            print("You can't do that here.\n")
+
+
+def match():
+    print(
+        "\nThe note says, 'Don't leave me here.'"
+        "\nDo you leave your friend or stay?\n"
+    )
+    while True:
+        if input("> ").lower() == "stay":
+            break
+        else:
+            print("You can't do that here.\n")
+
+
+def stay():
+    print("It's an exciting time in the world.")
+    print(ascii_images.end)
+    quit()
+
+
+def main_1():
     start()
     barrel()
     tunnel()
@@ -137,8 +166,17 @@ def main():
     # bye()
 
 
+def main_2():
+    start()
+    barrel_2()
+    note_2()
+    match()
+    stay()
+
+
 if __name__ == '__main__':
-    main()
+    # main_1()
+    main_2()
     # start()
     # trapped()
     # dungeon()
