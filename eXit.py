@@ -16,10 +16,8 @@
    - Stay
 """
 
-from os import execl
-from os.path import abspath
 from pathlib import Path
-from sys import argv, executable, path
+from sys import path
 
 codebase_root = Path(__file__).parents[0]
 path.append(str(codebase_root))
@@ -39,7 +37,7 @@ def barrel():
         "\nYou see a barrel. What do you do?\n"
     )
     while True:
-        if input("> ").lower() == "move the barrel":
+        if input("> ").strip().lower() == "move the barrel":
             break
         else:
             print("You can't do that here.\n")
@@ -52,7 +50,7 @@ def tunnel():
         "\nWhat do you do?\n"
     )
     while True:
-        if input("> ").lower() == "enter tunnel":
+        if input("> ").strip().lower() == "enter tunnel":
             break
         else:
             print("You can't do that here.\n")
@@ -66,7 +64,7 @@ def note():
         "\nWhat do you do?\n"
     )
     while True:
-        if input("> ").lower() == "read note":
+        if input("> ").strip().lower() == "read note":
             break
         else:
             print("You can't do that here.\n")
@@ -76,7 +74,7 @@ def too_dark():
     print(NOTE_1)
     print("\nIt is too dark to read the note. " "\nWhat do you do?\n")
     while True:
-        if input("> ").lower() == "leave":
+        if input("> ").strip().lower() == "leave":
             break
         else:
             print("You can't do that here.\n")
@@ -89,7 +87,7 @@ def leave():
         "\nyou to a beach. What do you do?\n"
     )
     while True:
-        if input("> ").lower() == "look":
+        if input("> ").strip().lower() == "look":
             break
         else:
             print("You can't do that here.\n")
@@ -99,9 +97,9 @@ def look():
     print(BOAT_3)
     print("\nIn the water you see a boat." "\nWhat do you do?\n")
     while True:
-        if input("> ").lower() == "get on the boat":
-            # break
+        if input("> ").strip().lower() == "get on the boat":
             congratulations()
+            break
         else:
             print("You can't do that here.\n")
 
@@ -112,9 +110,9 @@ def congratulations():
         "\nCongratulations, you're heading to a new world!"
         "\nDo you want to play again?\n"
     )
-    # TODO: Fix this. Currently restarts but terminal is slow. Need to cancel.
-    if input("> ").lower() == "yes":
-        execl(executable, abspath(__file__), *argv)
+    # TODO: Fix this. Avoid calling main() within subfunction.
+    if input("> ").strip().lower() == "yes":
+        main()
     else:
         quit()
 
@@ -129,7 +127,7 @@ def barrel_2():
         "\nYou see a barrel. What do you do?\n"
     )
     while True:
-        if input("> ").lower() == "sit down next to my friend":
+        if input("> ").strip().lower() == "sit down next to my friend":
             break
         else:
             print("You can't do that here.\n")
@@ -139,7 +137,7 @@ def note_2():
     print(NOTE_1)
     print("\nYour friend hands you a note." "\nWhat do you do?\n")
     while True:
-        if input("> ").lower() == "light a match":
+        if input("> ").strip().lower() == "light a match":
             break
         else:
             print("You can't do that here.\n")
@@ -152,7 +150,7 @@ def match():
         "\nDo you leave your friend or stay?\n"
     )
     while True:
-        if input("> ").lower() == "stay":
+        if input("> ").strip().lower() == "stay":
             break
         else:
             print("You can't do that here.\n")
@@ -184,6 +182,10 @@ def path_stay():
     stay()
 
 
-if __name__ == '__main__':
+def main():
     path_leave()
-    path_stay()
+    # path_stay()
+
+
+if __name__ == '__main__':
+    main()
