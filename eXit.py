@@ -1,19 +1,19 @@
 """
  **Answers to each input:*** (to follow episode 4x11)
 
- Path 1 - leave:
-   - Move the barrel
-   - Enter tunnel
-   - Read note
-   - Leave
-   - Look
-   - Get on the boat
-   - Yes
+ Path 1 - leave to a new world:
+   > Move the barrel
+   > Enter tunnel
+   > Read note
+   > Leave
+   > Look
+   > Get on the boat
+   > Yes
 
- Path two - stay:
-   - Sit down next to my friend
-   - Light a match
-   - Stay
+ Path two - stay with your friend:
+   > Sit down next to my friend
+   > Light a match
+   > Stay
 """
 
 from pathlib import Path
@@ -165,8 +165,6 @@ def stay():
 
 
 def path_leave():
-    # start()
-    # barrel()
     tunnel()
     note()
     too_dark()
@@ -175,8 +173,6 @@ def path_leave():
 
 
 def path_stay():
-    # start()
-    # barrel_2()
     note_2()
     match()
     stay()
@@ -201,19 +197,11 @@ def barrel_main():
             print("You can't do that here.\n")
 
 
-# def eXit():
-#     path_leave()
-# path_stay()
-
-
 def eXit():
     # Same starting point
     start()
     # Decision point at barrel
     barrel_main()
-    # Leave arc
-    # Play again choice
-    # Stay arc
 
 
 if __name__ == '__main__':
