@@ -16,7 +16,6 @@
    - Stay
 """
 
-import sys
 from os import execl
 from os.path import abspath
 from pathlib import Path
