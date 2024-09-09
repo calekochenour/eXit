@@ -46,5 +46,5 @@ Contains the recipe to create the Conda environment.
   * Added steps to take multiple paths through the game (path 1 - leave for a new world, path 2 - stay with your friend) to emulate the sequence in episode 4x11 "eXit"
   * Added ASCII images/visuals displaying various steps throughout the game (tunnel, boat, etc.) to complement the text portion of the game
 
-## Disclaimer:
+## Disclaimer
 This piece of software has no affiliation with the Mr. Robot brand or the USA Network.
