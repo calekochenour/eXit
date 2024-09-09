@@ -1,27 +1,50 @@
-[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://github.com/Manisso/fsociety/blob/master/LICENSE) ![OS](https://img.shields.io/badge/Tested%20On-Linux%20|%20OSX%20-yellowgreen.svg?style=flat-square) [![Python3](https://img.shields.io/badge/Python-3-green.svg?style=flat-square)](https://github.com/CRO-THEHACKER/fsociety3)
+# eXit
 
-[![alt tag](http://nikolaskama.me/content/images/2016/07/mr-robot-1.gif)](https://wikipedia.org/wiki/Mr._Robot)
+The ascii styled BBS game on the TV series Mr. Robot.
 
-# eXit is the ascii styled BBS game on the tv series Mr Robot
+This repo is a fork of DasAutoIngenieur's repo (https://github.com/DasAutoIngenieur/eXit), which itself is a fork of sinfulz's original repo (https://github.com/sinfulz/eXit).
 
-Users were able to play it here: https://www.whoismrrobot.com/exit/
-but soon the page was taken down by USA Network
-
-This Repo is a fork of sinfulz original repo https://github.com/sinfulz/eXit
-
-# Requirements
-* os
+## Requirements
+* pathlib
 * sys
 
-# Usage
+See environment.yml file for Python version this workflow was tested on.
 
-```
-python3 eXit.py
+## Usage
+Create and activate the Conda environment, then run the `eXit.py` script.
+
+Create Conda environment:
+```commandline
+conda env create -f environment.yml
 ```
 
-# Changelog
+Activate Conda environment:
+```commandline
+conda activate eXit
+```
+
+Run script:
+```commandline
+(eXit) > python eXit.py
+```
+
+## Files
+
+### `eXit.py`
+Contains the code to play the game.
+
+### `utilities/ascii.py`
+Contains all visuals used in `eXit.py`, in ASCII characters.
+
+### `environment.yml`
+Contains the recipe to create the Conda environment.
+
+## Changelog
 * Version 0.1, 19/04/2020 - Release day!
 * Version 1, 15/7/2024 - Replaced for with while loops
+* Version 2, September 8, 2024
+  * Added steps to take multiple paths through the game (path 1 - leave for a new world, path 2 - stay with your friend) to emulate the sequence in episode 4x11 "eXit"
+  * Added ASCII images/visuals displaying various steps throughout the game (tunnel, boat, etc.) to complement the text portion of the game
 
-# Disclaimer:
-This piece of software has no affiliation with the Mr Robot brand or the USA Network.
+## Disclaimer:
+This piece of software has no affiliation with the Mr. Robot brand or the USA Network.
