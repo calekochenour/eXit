@@ -1,7 +1,7 @@
 """
  Answers to each input (to follow episode 4x11) sequence:
 
- Path 1 - leave to a new world:
+ Path 1 - leave for a new world:
    > Move the barrel
    > Enter tunnel
    > Read note
@@ -29,7 +29,6 @@ def get_response():
 
 
 def start():
-    # print(START_2)
     print(START_3)
     print(START_1)
     input("Press the Enter button to start...")
@@ -58,7 +57,6 @@ def tunnel():
         "\nWhat do you do?\n"
     )
     while True:
-        # if response() == "enter tunnel":
         if get_response() == "enter tunnel":
             break
         else:
@@ -118,7 +116,6 @@ def congratulations():
         "\nCongratulations, you're heading to a new world!"
         "\nDo you want to play again?\n"
     )
-    # TODO: Fix this. Avoid calling main() within subfunction.
     if get_response() == "yes":
         eXit()
     else:
@@ -149,14 +146,13 @@ def match():
 
 
 def stay():
-    # print(STAY_1)
     print(ELLIOT_2)
     print("It's an exciting time in the world.")
     print(END_1)
     quit()
 
 
-def path_leave():
+def leave_for_new_world():
     tunnel()
     note_leave()
     too_dark()
@@ -165,22 +161,20 @@ def path_leave():
     congratulations()
 
 
-def path_stay():
+def stay_with_your_friend():
     note_stay()
     match()
     stay()
 
 
 def eXit():
-    start()
     is_real_exit = barrel()
     if is_real_exit:
-        # Follow path to stay
-        path_stay()
+        stay_with_your_friend()
     else:
-        # Follow path to leave
-        path_leave()
+        leave_for_new_world()
 
 
 if __name__ == '__main__':
+    start()
     eXit()
